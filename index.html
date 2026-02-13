@@ -26,20 +26,18 @@
         .stage { display: none; flex-direction: column; align-items: center; width: 95%; max-width: 400px; z-index: 10; text-align: center; height: 100vh; justify-content: center; position: relative; }
         .stage.active { display: flex; }
 
-        /* Lyric Display Style from Code 2 */
         #lyric-display {
             font-size: 1.4rem;
             color: white;
             text-shadow: 2px 2px 10px rgba(255, 10, 84, 0.6);
             min-height: 5rem;
             padding: 0 25px;
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
             display: flex; align-items: center; justify-content: center;
             font-weight: bold; line-height: 1.3;
             margin-bottom: 20px;
         }
 
-        /* Stage 1: Buttons */
         .btn-container { display: flex; gap: 20px; margin-top: 20px; align-items: center; justify-content: center; min-height: 100px; width: 100%; }
         button { padding: 15px 30px; border-radius: 50px; border: none; font-weight: bold; cursor: pointer; font-family: 'Shantell Sans'; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         #yes-btn, #ready-btn { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4); z-index: 10; font-size: 1.2rem; }
@@ -53,25 +51,16 @@
             100% { transform: translateX(0); }
         }
 
-        /* Stage 2: Heart & Slider */
         .heart-gallery { 
-            position: relative; 
-            width: 100%; 
-            height: 350px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            margin: 20px 0;
+            position: relative; width: 100%; height: 350px; 
+            display: flex; justify-content: center; align-items: center; margin: 20px 0;
         }
 
         .mini-polaroid { 
             position: absolute; width: 70px; height: 85px; background: white; padding: 4px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.2);
             z-index: 5; cursor: pointer; display: flex; flex-direction: column; align-items: center;
-            left: 50%;
-            top: 50%;
-            margin-left: -35px;
-            margin-top: -42px;
+            left: 50%; top: 50%; margin-left: -35px; margin-top: -42px;
         }
 
         .mini-polaroid img { width: 100%; height: 60px; object-fit: cover; pointer-events: none; }
@@ -81,8 +70,7 @@
             position: fixed !important; top: 50% !important; left: 50% !important;
             width: 280px; height: 340px; z-index: 5000 !important;
             transform: translate(-50%, -50%) rotate(0deg) scale(1) !important;
-            margin: 0 !important;
-            padding: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            margin: 0 !important; padding: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
         .mini-polaroid.zoomed img { height: 260px; }
         .mini-polaroid.zoomed p { font-size: 1rem; margin-top: 10px; }
@@ -93,7 +81,6 @@
         .progress-fill { position: absolute; left: 0; height: 100%; background: var(--primary); width: 0%; border-radius: 30px; pointer-events: none; }
         #heart-knob { position: absolute; left: 0; top: 0; width: 55px; height: 55px; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; z-index: 20; cursor: grab; touch-action: none; }
 
-        /* Stage 3: Envelope & Letter */
         .envelope-wrapper { position: relative; width: 280px; height: 200px; z-index: 10; margin-bottom: 20px; }
         .envelope { width: 100%; height: 100%; background: var(--primary); position: relative; z-index: 5; cursor: pointer; border-radius: 0 0 10px 10px; }
         .lid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--dark-pink); clip-path: polygon(0 0, 50% 60%, 100% 0); transform-origin: top; transition: 0.8s; z-index: 10; border-radius: 10px 10px 0 0; }
@@ -116,7 +103,7 @@
 </head>
 <body>
 
-<audio id="bg-music" loop>
+<audio id="bg-music" preload="auto">
     <source src="InShot_20260212_214321964.mp3.mpeg" type="audio/mpeg">
 </audio> 
 
@@ -176,8 +163,5 @@
     </div>
     <p style="color: white; font-weight: bold;">Tap envelope to open</p>
 </section>
-
-<script src="index.js">
-</script>
 </body>
 </html>
