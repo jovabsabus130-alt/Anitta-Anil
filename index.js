@@ -1,15 +1,16 @@
+// reduce 0.30 from 4.87,8.32,12.03,18.57,22.04,25.44to sync with music start at 0:30
 const lyrics = [
     { time: 0.00, text: "I don't know how to say this" },
-    { time: 4.00, text: "But" },
-    { time: 7.00, text: "I think you should know this" },
-    { time: 9.10, text: "All I dream of is your eyes" },
-    { time: 13.46, text: "All I long for is your touch" },
-    { time: 17.20, text: "And, darlin', something tells me that's enough, mm" },
-    { time: 24.23, text: "You can say that I'm a fool" },
-    { time: 27.63, text: "And I don't know very much" },
-    { time: 30.95, text: "But I think they call this love" },
-    { time: 38.00, text: "" }
+    { time: 1.50, text: "But" },
+    { time: 3.00, text: "I think you should know this" },
+    { time: 4.57, text: "All I dream of is your eyes" },
+    { time: 8.02, text: "All I long for is your touch" },
+    { time: 11.73, text: "And, darlin', something tells me that's enough, mm" },
+    { time: 18.27, text: "You can say that I'm a fool" },
+    { time: 21.74, text: "And I don't know very much" },
+    { time: 25.14, text: "But I think they call this love" }
 ];
+
 
 const imgSources = ["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg","6.jpeg","7.jpeg","8.jpeg","9.jpeg","10.jpeg"];
 const captions = ["Your Presence 🤍", "Your Smile 😊", "Every Moment 🫶", "My Love 🫴", "Our World 🌎", "Our Adventures 💗", "Our Dream 🌝", "Our Inside Jokes 🙈", "Simply us 🦢", "Your Eyes 👀"];
@@ -58,7 +59,7 @@ document.getElementById('ready-btn').onclick = function() {
             }, 150);
         }
 
-        if (currentTime >= 35.00) { 
+        if (currentTime >= 31.00) { 
             music.ontimeupdate = null;
             nextStage(1);
         }
@@ -168,3 +169,4 @@ function initScratch() {
     canvas.addEventListener('touchmove', (e) => { e.preventDefault(); scratch(e.touches[0].clientX, e.touches[0].clientY); }, {passive: false});
     canvas.addEventListener('mousemove', (e) => { if(e.buttons === 1) scratch(e.clientX, e.clientY); });
 }
+
